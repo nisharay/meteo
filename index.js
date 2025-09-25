@@ -55,6 +55,11 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function getForecast(city) {
+  let apiKey = "edotc63895cd1225b0fc30a76437dc70";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+}
+
 function displayForecast() {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
@@ -82,5 +87,5 @@ let searchFromElement = document.querySelector("#search-form");
 searchFromElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Lisbon");
-
+getForecast("Paris");
 displayForecast();
